@@ -1,0 +1,16 @@
+{"nodes": {
+  "bridge quartz": {"kind": "action", "status": "hypothesis"},
+  "voice dream": {"kind": "decision", "status": "risk"},
+  "portal budget": {"kind": "action", "status": "rejected"},
+  "buffer worker": {"kind": "tool", "status": null},
+  "hook delta": {"kind": "tool", "status": "verified"},
+  "corpus timer": {"kind": "fact", "status": "hypothesis"}},
+ "edges": [
+  ["bridge quartz", "fixes", "portal budget"],
+  ["bridge quartz", "evidence_for", "buffer worker"],
+  ["voice dream", "requires", "buffer worker"],
+  ["voice dream", "causes", "hook delta"],
+  ["portal budget", "requires", "corpus timer"],
+  ["buffer worker", "fixes", "hook delta"],
+  ["buffer worker", "causes", "corpus timer"],
+  ["hook delta", "contradicts", "corpus timer"]]}

@@ -1,0 +1,1 @@
+echo "use <<EOF and \${x} carefully" && echo 'cost $'

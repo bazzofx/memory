@@ -1,0 +1,56 @@
+== Synthetic cases
+PASS adv01-long-inline-python.sh              warn=false broad=false  [4c0a5f30de790be7]
+PASS edge01-heredoc-text-in-string.sh         warn=false broad=true  [568de018db4111fe]
+PASS edge02-partially-quoted-delim.sh         warn=true broad=true tool-collapse [97a0bd6fd2df1c0e]
+PASS edge03-dash-heredoc-tabs.sh              warn=true broad=true tool-collapse,lone-backslash-literal [8ea31893842b2ec4]
+PASS neg01-quoted-heredoc-backslashes.sh      warn=true broad=true tool-collapse,lone-backslash-literal [aaa4ddb4c6476e7c]
+PASS neg02-sq-python-raw-backslash.sh         warn=true broad=true tool-collapse [90a4680ff8108125]
+PASS neg03-git-commit-heredoc.sh              warn=false broad=true  [801e8b57887bedc8]
+PASS neg04-grep-alternation.sh                warn=false broad=true  [2c97759f1303b9b7]
+PASS neg05-echo-vars-loop.sh                  warn=false broad=true  [86b54c4b752969af]
+PASS neg06-dq-node-plain.sh                   warn=false broad=true  [89136108c540408b]
+PASS neg07-sed-escapes.sh                     warn=false broad=true  [4aa606070085b5ec]
+PASS neg08-unquoted-heredoc-plain-var.sh      warn=false broad=true  [cee35162418acbbb]
+PASS neg09-valid-json-quoted-heredoc.sh       warn=true broad=true tool-collapse,invalid-json-escape [ced2def25c7bae57]
+PASS neg10-escaped-quote-literal.sh           warn=false broad=true  [09459ced0457241c]
+PASS pos01-dq-backtick-subst.sh               warn=true broad=true substitution [a7b1af87c9f1d20f]
+PASS pos02-dq-backslash-collapse.sh           warn=true broad=true tool-collapse,lone-backslash-literal [42f864e4045874c0]
+PASS pos03-unquoted-heredoc-json.sh           warn=true broad=true tool-collapse,invalid-json-escape [02ea047857efce40]
+PASS pos04-echo-dq-json.sh                    warn=true broad=true tool-collapse,invalid-json-escape [bf67f22c094afabb]
+PASS pos05-lone-backslash-literal.sh          warn=true broad=true lone-backslash-literal [f2cdd8f89d7cb9c5]
+PASS pos06-invalid-json-escape.sh             warn=true broad=true invalid-json-escape [1ee6a488a73cca34]
+PASS pos07-unquoted-heredoc-node-subst.sh     warn=true broad=true substitution [6824731f6d75b81d]
+PASS pos08-dq-python-dollar-paren.sh          warn=true broad=true substitution [6804503028b5e416]
+== Robustness
+PASS malformed JSON       code=0 warn=false  92ms
+PASS empty stdin          code=0 warn=false  95ms
+PASS non-Bash tool        code=0 warn=false  98ms
+PASS missing command      code=0 warn=false  94ms
+PASS 200KB command        code=0 warn=false  122ms
+PASS unterminated quote   code=0 warn=true  104ms
+== Transcript corpus
+  positive id 102: warn=true broad=true tool-collapse,substitution,backslash-collapse
+  positive id 176: warn=true broad=true tool-collapse
+  positive id 244: warn=true broad=true tool-collapse
+  positive id 361: warn=true broad=true tool-collapse,lone-backslash-literal
+  FP id 11 err=false tool-collapse :: python - <<'PYEOF' | def sub(p,R): |     s=open(p,encoding='utf-8').read() |     for a,b in R: |         assert s.count(a)==1,(p,a[:70]) |         s=s
+  FP id 55 err=false tool-collapse,invalid-json-escape :: cd /c/_web_apps_2025/kairo; echo "== stale refs:"; grep -rnE '(^|[^:\\/a-z])(memories/memories\.md|dreams/dreams\.md|dreams/archive\.md|`mem
+  FP id 79 err=false tool-collapse,backslash-collapse :: cd /c/_web_apps_2025/kairo/src; node -e " | const fs=require('fs');const keys=['notes','templates','activeNoteId','currentView','selectedTag',
+  FP id 80 err=false tool-collapse :: S="C:/Users/joker/AppData/Local/Temp/claude/63c0ac49ff3d668a/33a70f29-300f-4d53-962b-f0c92a8c0f5d/scratchpad"; cat > "$S/map.cjs" <<'EOF' | co
+  FP id 84 err=false tool-collapse,backslash-collapse :: cd /c/_web_apps_2025/kairo/docs && node -e " | const fs=require('fs');const j=JSON.parse(fs.readFileSync('app-flow.json','utf8')); | let h=fs.re
+  FP id 101 err=false tool-collapse,backslash-collapse :: cd /c/_web_apps_2025/kairo/docs && node -e " | const fs=require('fs');const j=JSON.parse(fs.readFileSync('app-flow.json','utf8')); | j['\$commen
+  FP id 110 err=false tool-collapse :: python - <<'EOF' | import re,pathlib | p=pathlib.Path('luci/data/lexicon.json'); s=p.read_text(encoding='utf-8') | s=s.replace('"(open|show|show m
+  FP id 235 err=false lone-backslash-literal :: python - <<'EOF' | p='luci/serve.py' | s=open(p,encoding='utf-8').read() | R=[ | ("from .settings import LANGUAGES, WHISPER_MODELS, load_settings, l
+  FP id 243 err=false tool-collapse :: python - <<'EOF' | p='luci/data/lexicon.json' | s=open(p,encoding='utf-8').read() | ask=[ |  "what should i (do|work on|focus on|tackle|start with|s
+  FP id 246 err=false tool-collapse :: python - <<'EOF' | def sub(p,R): |     s=open(p,encoding='utf-8').read() |     for a,b in R: |         assert s.count(a)==1,(p,a[:70]) |         s=s.r
+  FP id 248 err=false tool-collapse :: python - <<'EOF' | p='luci/nlu/rules.py' | s=open(p,encoding='utf-8').read() | import re | i=s.index('_MANY = re.compile(') | j=s.index('\n',i) | print(
+  FP id 260 err=false lone-backslash-literal :: python - <<'EOF' | def sub(p,R): |     s=open(p,encoding='utf-8').read() |     for a,b in R: |         assert s.count(a)==1,(p,a[:70]) |         s=s.r
+  FP id 308 err=false tool-collapse :: python - <<'PYEOF' | def sub(p,R): |     s=open(p,encoding='utf-8').read() |     for a,b in R: |         assert s.count(a)==1,(p,a[:70]) |         s=s
+  FP id 310 err=false tool-collapse,backslash-collapse :: cd luci && python -c " | for p in ('requirements.txt','README.md'): |     s=open(p,encoding='utf-8').read(); n=s.count('\\\\Luci\x0boices'); s=s
+  FP id 353 err=false tool-collapse :: python - <<'PYEOF' | p='docs/luci-voice-plan.md' | s=open(p,encoding='utf-8').read() | R=[ | ("Status: **Phase 1 (Kairo side) built**, 22 Nov 2026. 
+  FP id 376 err=false tool-collapse,invalid-json-escape :: cd /c/_web_apps_2025/kairo; echo "== stale refs:"; grep -rnE '(^|[^:\\/a-z])(memories/memories\.md|dreams/dreams\.md|dreams/archive\.md|`mem
+corpus: 409 rows, sha 11e55f0d68ad2753
+recall (candidate): 4/4   recall (broad): 4/4
+warnings on non-failing calls: candidate 16/403 (4.0%, 0 long-only)   broad 93/403 (23.1%)
+timing over 435 hook runs: p50 100ms  p95 150ms  max 445ms
+synthetic/robustness failures: 0

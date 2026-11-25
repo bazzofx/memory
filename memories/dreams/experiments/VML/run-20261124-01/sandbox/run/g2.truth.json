@@ -1,0 +1,152 @@
+{
+ "graph": {
+  "nodes": [
+   {
+    "id": "N0",
+    "label": "hook filter",
+    "kind": "issue",
+    "status": "verified"
+   },
+   {
+    "id": "N1",
+    "label": "batch token",
+    "kind": "tool",
+    "status": "rejected"
+   },
+   {
+    "id": "N2",
+    "label": "batch quartz",
+    "kind": "decision",
+    "status": "pending"
+   },
+   {
+    "id": "N3",
+    "label": "jungle matrix",
+    "kind": "action",
+    "status": null
+   },
+   {
+    "id": "N4",
+    "label": "cipher session",
+    "kind": "fact",
+    "status": null
+   },
+   {
+    "id": "N5",
+    "label": "voice voice",
+    "kind": "fact",
+    "status": "rejected"
+   },
+   {
+    "id": "N6",
+    "label": "memory export",
+    "kind": "fact",
+    "status": "hypothesis"
+   },
+   {
+    "id": "N7",
+    "label": "ember vector",
+    "kind": "outcome",
+    "status": "hypothesis"
+   },
+   {
+    "id": "N8",
+    "label": "voice kernel",
+    "kind": "action",
+    "status": null
+   },
+   {
+    "id": "N9",
+    "label": "signal raven",
+    "kind": "decision",
+    "status": "hypothesis"
+   }
+  ],
+  "edges": [
+   {
+    "src": "N3",
+    "dst": "N5",
+    "rel": "fixes"
+   },
+   {
+    "src": "N4",
+    "dst": "N5",
+    "rel": "requires"
+   },
+   {
+    "src": "N0",
+    "dst": "N3",
+    "rel": "evidence_for"
+   },
+   {
+    "src": "N6",
+    "dst": "N9",
+    "rel": "part_of"
+   },
+   {
+    "src": "N5",
+    "dst": "N6",
+    "rel": "causes"
+   },
+   {
+    "src": "N1",
+    "dst": "N3",
+    "rel": "supersedes"
+   },
+   {
+    "src": "N1",
+    "dst": "N4",
+    "rel": "evidence_for"
+   },
+   {
+    "src": "N2",
+    "dst": "N4",
+    "rel": "supersedes"
+   },
+   {
+    "src": "N4",
+    "dst": "N7",
+    "rel": "contradicts"
+   },
+   {
+    "src": "N0",
+    "dst": "N2",
+    "rel": "fixes"
+   },
+   {
+    "src": "N7",
+    "dst": "N9",
+    "rel": "evidence_for"
+   },
+   {
+    "src": "N3",
+    "dst": "N6",
+    "rel": "requires"
+   },
+   {
+    "src": "N4",
+    "dst": "N6",
+    "rel": "requires"
+   }
+  ]
+ },
+ "answers": {
+  "q1": {
+   "rel": "part_of",
+   "src": "memory export",
+   "dst": "signal raven"
+  },
+  "q2": [
+   "memory export"
+  ],
+  "q3": [
+   "jungle matrix"
+  ],
+  "q4": [
+   "batch quartz"
+  ],
+  "q5": "fact",
+  "q6": false
+ },
+ "capsule_sha": "ad911d4bb48b2f2507589a0ff2a1c1a204f65b8b4d067f2fee57e48f36760b06"
+}

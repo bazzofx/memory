@@ -7,30 +7,18 @@ Location: `C:\ai\memories\dreams\dreams.md` (central, shared by all projects; ar
 ## Pending
 
 ### DREAM-001 — Warn before inline scripts that Bash will mangle
-- Category: Quality
-- Status: Proposed
-- Origin: Observed
-- Evidence: `categories/issues.md` — Shell & scripting: inline-script quoting (backslashes / `${}` mangled in heredoc, printf, `python -c`), seen 4× across kairo and memory setup
-- Trigger: A Bash tool call contains a heredoc, `printf`/`echo` or `python -c`/`node -e` with backslashes or `${`
-- Proposal: A PreToolUse hook on Bash that detects those patterns and returns a warning suggesting the Write tool + run-by-path instead (warn, not block)
-- Benefit: Estimated — fewer SyntaxError / invalid-JSON retries; untested
-- Validation: Count matching `is_error` results in transcripts for 2 weeks before vs after; check false-positive warnings
-- Impact / Effort / Risk: Medium / Low / Low (estimates)
-- Scope: cross-project
-- Date: 2026-11-22
+- Status: Proposed (resurfaced 2026-11-24 from `archive.md`; it was archived 2026-11-23 as resolved_by_memory, provisional)
+- Origin: Observed. Scope: cross-project. Dated 2026-11-22.
+- Why it resurfaced: the archive condition ("any Bash call after 2026-11-23 … silently writes broken output") was met. The memory rule existed and was still broken: in the Kairo voice session, inline `python - <<'PYEOF'` edits wrote control characters without any error:
+  - `"\\v"` became a vertical tab in `README.md`, `luci/requirements.txt` and `docs/luci-voice-plan.md` (`%LOCALAPPDATA%\Luci<VT>oices`)
+  - `"\\b"` became a backspace in `luci/luci/nlu/rules.py`, so a word-boundary regex silently stopped matching
+  - A Python `SyntaxError` from a `'that's'` quote.
 
-### DREAM-002 — Reusable script for mining transcript errors
-- Category: Automation
-- Status: Proposed
-- Origin: Observed
-- Evidence: `categories/procedures.md` — "Refresh memory from past sessions" was done with a one-off script written by hand, which itself first failed on a backslash
-- Trigger: Refreshing memory or running a periodic memory review
-- Proposal: Save the scanner as `C:\ai\memories\tools\mine-errors.py` (args: project filter, since-date) and point the procedure at it
-- Benefit: Estimated — refresh in one command instead of rewriting the script; untested
-- Validation: Run on current transcripts; output matches the manual pass and finishes in under a minute
-- Impact / Effort / Risk: Low / Low / Low (estimates)
-- Scope: cross-project
-- Date: 2026-11-22
+  Each was caught only by later checks or tests. Evidence: `categories/issues.md` → Shell & scripting, entry 1 (2026-11-24 addition).
+- Proposal: deploy the already-tested sandbox hook (`dreams/experiments/DREAM-001/run-20261123-01/sandbox/inline-script-guard.cjs`) as a **project-local canary** PreToolUse warning in kairo. It must not block anything. Also consider a cheap PostToolUse check that flags new `\x08` / `\x0b` bytes in files touched by a Bash call.
+- Success measure: across 2 weeks, zero silent control-character writes or backslash-mangling failures, with at most 5% warnings on Bash calls that would have worked (the sandbox measured 4%).
+- Needs: separate user approval before anything is installed (dream-realizer).
+- Reusable artifacts: `dreams/experiments/DREAM-001/run-20261123-01/sandbox/`, plus the reports for `run-20261122-01` and `run-20261123-01`.
 
 ## Approved Experiments
 
@@ -39,3 +27,8 @@ Location: `C:\ai\memories\dreams\dreams.md` (central, shared by all projects; ar
 ## Implemented
 
 ## Deferred or Rejected
+
+### DREAM-002 — Reusable script for mining transcript errors
+- Status: Rejected (2026-11-22)
+- Reason: Below the policy bar. It happened once, there's no recurring failure or bottleneck, and `procedures.md` → "Refresh memory from past sessions" already covers it. The backslash failure cited as evidence belongs to DREAM-001 (archived; see `archive.md`).
+- Resurface only if: memory refreshes become periodic (for example monthly) and rewriting the scanner takes real time or fails again.

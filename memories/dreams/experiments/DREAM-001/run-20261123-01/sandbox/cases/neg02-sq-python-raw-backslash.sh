@@ -1,0 +1,1 @@
+python -c 'print(r"C:\ai", "x\\y")'

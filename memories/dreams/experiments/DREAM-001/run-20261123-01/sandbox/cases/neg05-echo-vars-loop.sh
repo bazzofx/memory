@@ -1,0 +1,1 @@
+for f in a b; do echo "== $f"; printf "== %s: \n" "$f"; done

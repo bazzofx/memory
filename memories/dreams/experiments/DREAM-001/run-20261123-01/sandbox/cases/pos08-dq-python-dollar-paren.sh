@@ -1,0 +1,1 @@
+python -c "import re; print(re.sub(r'(\d+)$(x)', 'n', 'ab12'))"

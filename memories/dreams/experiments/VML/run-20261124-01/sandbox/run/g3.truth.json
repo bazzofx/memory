@@ -1,0 +1,230 @@
+{
+ "graph": {
+  "nodes": [
+   {
+    "id": "N0",
+    "label": "vector fixture",
+    "kind": "outcome",
+    "status": null
+   },
+   {
+    "id": "N1",
+    "label": "orbit parser",
+    "kind": "outcome",
+    "status": "risk"
+   },
+   {
+    "id": "N2",
+    "label": "router falcon",
+    "kind": "issue",
+    "status": null
+   },
+   {
+    "id": "N3",
+    "label": "signal session",
+    "kind": "outcome",
+    "status": null
+   },
+   {
+    "id": "N4",
+    "label": "layer memory",
+    "kind": "fact",
+    "status": null
+   },
+   {
+    "id": "N5",
+    "label": "dream lantern",
+    "kind": "decision",
+    "status": null
+   },
+   {
+    "id": "N6",
+    "label": "driver memory",
+    "kind": "outcome",
+    "status": null
+   },
+   {
+    "id": "N7",
+    "label": "parser layer",
+    "kind": "outcome",
+    "status": null
+   },
+   {
+    "id": "N8",
+    "label": "ember token",
+    "kind": "action",
+    "status": "pending"
+   },
+   {
+    "id": "N9",
+    "label": "vector quote",
+    "kind": "action",
+    "status": "risk"
+   },
+   {
+    "id": "N10",
+    "label": "island voice",
+    "kind": "outcome",
+    "status": null
+   },
+   {
+    "id": "N11",
+    "label": "meadow bridge",
+    "kind": "outcome",
+    "status": null
+   },
+   {
+    "id": "N12",
+    "label": "prompt ledger",
+    "kind": "tool",
+    "status": null
+   },
+   {
+    "id": "N13",
+    "label": "portal orbit",
+    "kind": "fact",
+    "status": "pending"
+   },
+   {
+    "id": "N14",
+    "label": "token kernel",
+    "kind": "outcome",
+    "status": "risk"
+   },
+   {
+    "id": "N15",
+    "label": "anchor driver",
+    "kind": "action",
+    "status": null
+   }
+  ],
+  "edges": [
+   {
+    "src": "N3",
+    "dst": "N5",
+    "rel": "causes"
+   },
+   {
+    "src": "N4",
+    "dst": "N5",
+    "rel": "causes"
+   },
+   {
+    "src": "N0",
+    "dst": "N4",
+    "rel": "part_of"
+   },
+   {
+    "src": "N0",
+    "dst": "N1",
+    "rel": "fixes"
+   },
+   {
+    "src": "N6",
+    "dst": "N8",
+    "rel": "evidence_for"
+   },
+   {
+    "src": "N5",
+    "dst": "N10",
+    "rel": "requires"
+   },
+   {
+    "src": "N4",
+    "dst": "N9",
+    "rel": "causes"
+   },
+   {
+    "src": "N1",
+    "dst": "N2",
+    "rel": "requires"
+   },
+   {
+    "src": "N10",
+    "dst": "N14",
+    "rel": "fixes"
+   },
+   {
+    "src": "N13",
+    "dst": "N15",
+    "rel": "fixes"
+   },
+   {
+    "src": "N9",
+    "dst": "N14",
+    "rel": "requires"
+   },
+   {
+    "src": "N6",
+    "dst": "N7",
+    "rel": "part_of"
+   },
+   {
+    "src": "N8",
+    "dst": "N10",
+    "rel": "part_of"
+   },
+   {
+    "src": "N2",
+    "dst": "N4",
+    "rel": "contradicts"
+   },
+   {
+    "src": "N10",
+    "dst": "N13",
+    "rel": "fixes"
+   },
+   {
+    "src": "N10",
+    "dst": "N15",
+    "rel": "evidence_for"
+   },
+   {
+    "src": "N5",
+    "dst": "N7",
+    "rel": "requires"
+   },
+   {
+    "src": "N3",
+    "dst": "N8",
+    "rel": "fixes"
+   },
+   {
+    "src": "N8",
+    "dst": "N9",
+    "rel": "causes"
+   },
+   {
+    "src": "N8",
+    "dst": "N12",
+    "rel": "causes"
+   },
+   {
+    "src": "N12",
+    "dst": "N15",
+    "rel": "causes"
+   }
+  ]
+ },
+ "answers": {
+  "q1": {
+   "rel": "evidence_for",
+   "src": "island voice",
+   "dst": "anchor driver"
+  },
+  "q2": [
+   "dream lantern"
+  ],
+  "q3": [
+   "portal orbit"
+  ],
+  "q4": [
+   "orbit parser",
+   "token kernel",
+   "vector quote"
+  ],
+  "q5": "outcome",
+  "q6": true
+ },
+ "capsule_sha": "df62085164d567d22c99a769d786f7056988e3bf423b2b5019e77e8062201388"
+}

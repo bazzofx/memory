@@ -1,0 +1,1 @@
+printf 'foo\nbaz\n' | grep -n "foo\|bar"

@@ -1,0 +1,26 @@
+[
+ {
+  "id": "q1",
+  "q": "What is the relation between 'memory export' and 'signal raven'? Answer {rel, src, dst}."
+ },
+ {
+  "id": "q2",
+  "q": "List everything 'voice voice' directly causes."
+ },
+ {
+  "id": "q3",
+  "q": "List every node with a 'fixes' relation pointing to 'voice voice'."
+ },
+ {
+  "id": "q4",
+  "q": "List every node whose status is 'pending'."
+ },
+ {
+  "id": "q5",
+  "q": "What kind is 'memory export'?"
+ },
+ {
+  "id": "q6",
+  "q": "Does 'ember vector' lead to 'hook filter' through a chain of 2+ 'causes' arrows? Answer true/false."
+ }
+]

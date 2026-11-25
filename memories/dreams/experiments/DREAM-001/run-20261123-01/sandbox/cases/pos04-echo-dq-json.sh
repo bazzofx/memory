@@ -1,0 +1,1 @@
+echo "{\"path\": \"C:\\ai\"}" > fx2.json && python -m json.tool fx2.json

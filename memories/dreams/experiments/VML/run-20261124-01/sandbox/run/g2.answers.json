@@ -1,0 +1,6 @@
+{"q1": {"rel": "part_of", "src": "memory export", "dst": "signal raven"},
+ "q2": ["memory export"],
+ "q3": ["jungle matrix"],
+ "q4": ["batch quartz"],
+ "q5": "fact",
+ "q6": false}

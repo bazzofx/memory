@@ -1,0 +1,1 @@
+printf 'a\033[31mb\n' | sed 's/\x1b\[[0-9;]*m//g'

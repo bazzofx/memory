@@ -15,6 +15,8 @@ Root: `C:\ai\memories\`. Read this, then load only the file you need.
 | `categories/pending.md` | Unresolved tasks and follow-ups | Session start, task end, or "what's left?" |
 | `projects/<name>.md` | Project goals, architecture, tech, constraints, project-only decisions | Working in that project (e.g. `projects/kairo.md`) |
 | `dreams/dreams.md` | Improvement proposals, experiments, approvals, implemented capabilities | Session review, or when asked about dreams (`dream-manager` skill) |
+| `dreams/archive.md` | Closed dreams with resolution and "resurface if" conditions | Before proposing a dream (avoid reviving a closed one), or when a matching failure recurs |
+| `dreams/experiments/<DREAM-ID>/<run-id>/` | Experiment plans, reports and sandbox prototypes | Realizing, resuming or reviewing a dream (`dream-realizer` skill) |
 
 Placement rules:
 - Project-only knowledge goes in `projects/<name>.md`, not tagged into a category file.

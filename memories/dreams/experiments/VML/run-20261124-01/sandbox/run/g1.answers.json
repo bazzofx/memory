@@ -1,0 +1,6 @@
+{"q1": {"rel": "contradicts", "src": "hook delta", "dst": "corpus timer"},
+ "q2": ["hook delta"],
+ "q3": ["bridge quartz"],
+ "q4": ["bridge quartz", "corpus timer"],
+ "q5": "tool",
+ "q6": false}

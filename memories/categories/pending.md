@@ -5,4 +5,5 @@ Format: `- [YYYY-MM-DD] [project] <item>. Next: <first step>.` Delete an item wh
 
 - [2026-11-22] [kairo] Memory Stop hook (`.claude/hooks/memory-check.cjs`) only tested with fixtures, not yet seen firing in a live session. Next: after a noisy task in a new session, confirm it asks for memory-optimizer once.
 - [2026-11-22] [kairo] Memory Stop hook now also runs the dream pass (Phase B) — confirm in a live session that it adds/updates dreams without duplicates. Next: check `dreams/dreams.md` after the first hook-triggered run.
+- [2026-11-24] [kairo] Luci's spoken path (Ctrl+1 → Whisper, a spoken yes/no to a proposal, barge-in) was only tested with typed input. The microphone was never tested live. Next: ask the user to try it, and check the Luci log.
 - [2026-11-22] [kairo] Dreams are captured at task end, but there's no SessionStart review (show up to 3 pending dreams). Next: ask the user whether to add a SessionStart hook.
