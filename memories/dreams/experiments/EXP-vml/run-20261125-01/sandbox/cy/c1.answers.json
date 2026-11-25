@@ -1,0 +1,6 @@
+{"q1": {"rel": "part_of", "src": "policy anchor", "dst": "policy beacon"},
+ "q2": ["kernel shell"],
+ "q3": ["policy anchor"],
+ "q4": ["export voice", "orbit router"],
+ "q5": "issue",
+ "q6": true}

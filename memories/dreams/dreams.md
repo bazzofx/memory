@@ -14,11 +14,12 @@ Location: `C:\ai\memories\dreams\dreams.md` (central, shared by all projects; ar
   - `"\\b"` became a backspace in `luci/luci/nlu/rules.py`, so a word-boundary regex silently stopped matching
   - A Python `SyntaxError` from a `'that's'` quote.
 
-  Each was caught only by later checks or tests. Evidence: `categories/issues.md` → Shell & scripting, entry 1 (2026-11-24 addition).
+  Each was caught only by later checks or tests. Evidence: I-001 in `categories/issues.md` (2026-11-24 addition).
 - Proposal: deploy the already-tested sandbox hook (`dreams/experiments/DREAM-001/run-20261123-01/sandbox/inline-script-guard.cjs`) as a **project-local canary** PreToolUse warning in kairo. It must not block anything. Also consider a cheap PostToolUse check that flags new `\x08` / `\x0b` bytes in files touched by a Bash call.
 - Success measure: across 2 weeks, zero silent control-character writes or backslash-mangling failures, with at most 5% warnings on Bash calls that would have worked (the sandbox measured 4%).
 - Needs: separate user approval before anything is installed (dream-realizer).
 - Reusable artifacts: `dreams/experiments/DREAM-001/run-20261123-01/sandbox/`, plus the reports for `run-20261122-01` and `run-20261123-01`.
+- Subconscious: `subconscious/DREAM-001-bash-tool-backslash-layer.md` (+ `.png`) covers the verified discovery and correct way from the sandbox run. Rebuild it if the deployment is validated.
 
 ## Approved Experiments
 
@@ -30,5 +31,5 @@ Location: `C:\ai\memories\dreams\dreams.md` (central, shared by all projects; ar
 
 ### DREAM-002 — Reusable script for mining transcript errors
 - Status: Rejected (2026-11-22)
-- Reason: Below the policy bar. It happened once, there's no recurring failure or bottleneck, and `procedures.md` → "Refresh memory from past sessions" already covers it. The backslash failure cited as evidence belongs to DREAM-001 (archived; see `archive.md`).
+- Reason: Below the policy bar. It happened once, there's no recurring failure or bottleneck, and PR-001 in `procedures.md` ("Refresh memory from past sessions") already covers it. The backslash failure cited as evidence belongs to DREAM-001 (archived; see `archive.md`).
 - Resurface only if: memory refreshes become periodic (for example monthly) and rewriting the scanner takes real time or fails again.

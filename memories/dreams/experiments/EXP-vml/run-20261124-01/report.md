@@ -1,6 +1,6 @@
 # VML (Visual Memory Language) — Experiment Report
 
-- **Run ID:** VML / run-20261124-01. There's no dream entry; the user asked for this test directly in chat.
+- **Run ID:** EXP-vml / run-20261124-01 (folder named `VML` until 2026-11-25). There's no dream entry; the user asked for this test directly in chat.
 - **Date / environment:** 2026-11-24. Windows 10, Python 3.12.6, Pillow 12.3.0. No new dependencies and no network access. Read by Claude Opus 5.5 through the Read tool's vision.
 - **Scope:** sandbox only. Nothing in the memory system was converted or changed.
 

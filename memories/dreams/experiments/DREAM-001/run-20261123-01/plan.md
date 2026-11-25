@@ -3,7 +3,7 @@
 - Dream ID: DREAM-001 — Warn before inline scripts that Bash will mangle
 - Run ID: run-20261123-01
 - Approval/status: The user asked in chat on 2026-11-23 to "run experiments within the dream 01". The scope is sandbox only (see "Exact approved experimental actions"). Deployment is NOT authorized.
-- Originating memory IDs and versions: `categories/issues.md` → Shell & scripting, entry 1 (written 2026-11-22T22:41Z). Previous run: `../run-20261122-01/report.md` (Gate 1 → unconfirmed_after_fix).
+- Originating memory IDs and versions: `categories/issues.md` → Shell & scripting, entry 1 (now I-001) (written 2026-11-22T22:41Z). Previous run: `../run-20261122-01/report.md` (Gate 1 → unconfirmed_after_fix).
 - Owner/date: Claude (Opus 5.5), 2026-11-23
 - Problem statement and evidence chronology: There were 4 failures on 2026-11-22, all before the rule existed. After the rule, 0 of 25 Bash calls failed this way (too small a sample to say much). The broad trigger proposed in the dream flagged 7 of those 25 calls, all of which worked fine.
 - Why existing memory or workaround is insufficient: This hasn't been shown. The rule only helps if it's recalled before the call. This run tests whether a hook *could* catch the failure class cheaply. It does not test whether the problem still happens.

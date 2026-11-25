@@ -1,0 +1,26 @@
+[
+ {
+  "id": "q1",
+  "q": "What is the relation between 'quartz meadow' and 'worker worker'? Answer {rel, src, dst}."
+ },
+ {
+  "id": "q2",
+  "q": "List everything 'island batch' directly causes."
+ },
+ {
+  "id": "q3",
+  "q": "List every node with a 'fixes' relation pointing to 'worker worker'."
+ },
+ {
+  "id": "q4",
+  "q": "List every node whose status is 'rejected'."
+ },
+ {
+  "id": "q5",
+  "q": "What kind is 'quartz meadow'?"
+ },
+ {
+  "id": "q6",
+  "q": "Does 'portal pebble' lead to 'worker worker' through a chain of 2+ 'causes' arrows? Answer true/false."
+ }
+]

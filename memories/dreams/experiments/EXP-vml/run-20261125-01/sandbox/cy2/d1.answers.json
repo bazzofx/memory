@@ -1,0 +1,6 @@
+{"q1": {"rel": "causes", "src": "quartz meadow", "dst": "worker worker"},
+ "q2": ["portal pebble"],
+ "q3": ["portal pebble"],
+ "q4": ["portal pebble"],
+ "q5": "issue",
+ "q6": true}

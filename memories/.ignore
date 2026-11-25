@@ -1,0 +1,3 @@
+# Hidden from ripgrep / the Grep tool: experiment sandboxes (fixtures, prototypes, renders).
+# Read them by path when realizing or reviewing a dream.
+dreams/experiments/**/sandbox/

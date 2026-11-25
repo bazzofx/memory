@@ -1,6 +1,7 @@
 # Project: kairo
 
 Path: `C:\_web_apps_2025\kairo` (Git, branch `main`). Load when working in this project.
+Cross-project lessons from here: S-001 (Electron over CDP), S-002 (local TTS), S-004 (LLM proposes, code decides), I-012/I-014/I-015 (Python packaging), R-002 (voice handoff doc).
 
 ## Overview
 - Web app: TypeScript + Vite (`vite.config.ts`, `src/`, `server.ts`), Vitest tests, Firebase (`firestore.rules`, `firebase-applet-config.json`).
@@ -31,5 +32,5 @@ Path: `C:\_web_apps_2025\kairo` (Git, branch `main`). Load when working in this 
 - [2026-11-24] UI redesign ("KAIRO — UI Redesign" spec) runs in stages, with a commit offered after each. Stage 1 (top bar, `k-*` colour tokens in `src/index.css` `@theme`) is done. Planned next: 2 folder sidebar + Create menu, 3 task rows/groups/detail drawer, 4 `#`/`+`/`@`/`!` suggestions + focus mode, 5 restyle remaining views. Verify UI work in the web app only (`npm run dev`, tests, tsc). Why: the user said to skip rebuilding the .exe (`npm run package:win`) for UI changes. Still waiting on user answers: what the task drawer shows (tasks are markdown lines with no status/attachments), when user-created Notes folders land (`Note.folder` is a fixed union), and where Tags go. Decided by the user: Calendar is a top-bar button, and Upcoming has a List/Calendar switch. The sidebar has no Daily Journal item and no per-document list; journals and documents live in All Notes. To Do filters by Status and by Project (with a project, no project, or one project).
 
 ## Agent setup
-- Skills: `.claude/skills/memory-optimizer`, `.claude/skills/dream-manager`.
-- Stop hook: `.claude/hooks/memory-check.cjs` — asks for memory-optimizer after tasks with 2+ tool errors or 20+ tool calls (env: `MEMORY_HOOK_MIN_ERRORS`, `MEMORY_HOOK_MIN_TOOLS`).
+- [2026-11-25] Memory skills, the Stop hook and the `global.md` import now come from the global `~/.claude` setup (D-001, D-002). `.claude/settings.json` is `{}` (its Stop entry was removed), and `CLAUDE.md` holds only the pointer to this file. Leftovers still in the repo: project copies of the 4 skills in `.claude/skills/` and an unused `.claude/hooks/memory-check.cjs` (identical to the global one); see T-004.
+- The hook asks for memory-optimizer after tasks with 2+ tool errors or 20+ tool calls (env: `MEMORY_HOOK_MIN_ERRORS`, `MEMORY_HOOK_MIN_TOOLS`).

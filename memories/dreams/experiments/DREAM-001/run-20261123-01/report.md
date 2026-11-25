@@ -80,7 +80,7 @@ All the predeclared thresholds are met. Runtime is right at the limit (p95 150 m
 `plan.md`, `report.md`, `sandbox/{inline-script-guard.cjs, run-tests.cjs, layer-sim.cjs, results-rev3.txt, cases/}`
 
 ## Memory updates proposed
-One correction to `categories/issues.md` → Shell & scripting, entry 1: add the tool-layer backslash collapse (verified 2026-11-23, Claude Code 2.1.329, Windows).
+One correction to `categories/issues.md` → Shell & scripting, entry 1 (now I-001): add the tool-layer backslash collapse (verified 2026-11-23, Claude Code 2.1.329, Windows).
 
 ## Reviewed/approved by
 Pending user review.

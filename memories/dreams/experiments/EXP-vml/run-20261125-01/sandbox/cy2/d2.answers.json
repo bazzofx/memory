@@ -1,0 +1,6 @@
+{"q1": {"rel": "part_of", "src": "signal memory", "dst": "summit ember"},
+ "q2": ["portal anchor"],
+ "q3": ["memory session"],
+ "q4": ["bridge quote"],
+ "q5": "tool",
+ "q6": true}

@@ -1,0 +1,26 @@
+[
+ {
+  "id": "q1",
+  "q": "What is the relation between 'session matrix' and 'schema import'? Answer {rel, src, dst}."
+ },
+ {
+  "id": "q2",
+  "q": "List everything 'orbit voice' directly causes."
+ },
+ {
+  "id": "q3",
+  "q": "List every node with a 'fixes' relation pointing to 'lantern delta'."
+ },
+ {
+  "id": "q4",
+  "q": "List every node whose status is 'rejected'."
+ },
+ {
+  "id": "q5",
+  "q": "What kind is 'schema import'?"
+ },
+ {
+  "id": "q6",
+  "q": "Does 'harbor socket' lead to 'session matrix' through a chain of 2+ 'causes' arrows? Answer true/false."
+ }
+]

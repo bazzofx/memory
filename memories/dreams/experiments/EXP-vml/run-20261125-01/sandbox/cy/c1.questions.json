@@ -1,0 +1,26 @@
+[
+ {
+  "id": "q1",
+  "q": "What is the relation between 'policy anchor' and 'policy beacon'? Answer {rel, src, dst}."
+ },
+ {
+  "id": "q2",
+  "q": "List everything 'ledger session' directly causes."
+ },
+ {
+  "id": "q3",
+  "q": "List every node with a 'fixes' relation pointing to 'kernel shell'."
+ },
+ {
+  "id": "q4",
+  "q": "List every node whose status is 'verified'."
+ },
+ {
+  "id": "q5",
+  "q": "What kind is 'kernel voice'?"
+ },
+ {
+  "id": "q6",
+  "q": "Does 'nectar driver' lead to 'orbit router' through a chain of 2+ 'causes' arrows? Answer true/false."
+ }
+]
