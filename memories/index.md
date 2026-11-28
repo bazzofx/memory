@@ -14,7 +14,7 @@ Root: `C:\ai\memories\`. Read this, then load only the file or entries you need.
 | `categories/limitations.md` (`L-`) | Known constraints of tools/platforms + workarounds | A tool behaves unexpectedly; before using a tool with a listed limit |
 | `categories/references.md` (`R-`) | How-to notes, known commands, pointers to docs and toolbox scripts | You need a command, doc or script for a tool or service |
 | `categories/pending.md` (`T-`) | Unresolved tasks and follow-ups | Session start, task end, or "what's left?" |
-| `projects/<name>.md` | Project goals, architecture, tech, constraints, project-only decisions | Working in that project: `kairo`, `zenwarrior` (ZenWarriorSounds), `voice2text` |
+| `projects/<name>.md` | Project goals, architecture, tech, constraints, project-only decisions | Working in that project: `kairo`, `zenwarrior` (ZenWarriorSounds), `voice2text`, `edex-ai`, `baltic-intel`, `cve-intel`, `auto-job-search` |
 | `dreams/dreams.md` | Improvement proposals, experiments, approvals, implemented capabilities | Session review, or when asked about dreams (`dream-manager` skill) |
 | `dreams/archive.md` | Closed dreams with resolution and "resurface if" conditions | Before proposing a dream (avoid reviving a closed one), or when a matching failure recurs |
 | `dreams/experiments/<DREAM-ID or EXP-slug>/<run-id>/` | Experiment plans, reports and sandbox prototypes (`EXP-` = experiment with no dream, e.g. `EXP-vml`) | Realizing, resuming or reviewing a dream (`dream-realizer` skill) |
@@ -36,32 +36,34 @@ Placement rules:
 ```
 - IDs are permanent and never reused, even after an entry is deleted or moved (a moved entry keeps its ID). Link entries by ID, never by position ("entry 1").
 - Prefixes: `I` issues, `S` successes, `D` decisions, `P` preferences, `E` environments, `L` limitations, `R` references, `T` pending, `PR` procedures (`## PR-NNN — <task>` heading, tags on the next line).
-- Tags (fixed list; add one here first, only when no existing tag fits): #shell #powershell #windows #python #packaging #gpu #llm #tts #stt #image-gen #json #browser #electron #ui #testing #git #claude-code #memory #secrets
+- Tags (fixed list; add one here first, only when no existing tag fits): #shell #powershell #windows #python #packaging #gpu #llm #tts #stt #image-gen #json #browser #electron #ui #testing #git #claude-code #memory #secrets #audio #video
 - After adding, removing or retagging entries, run `python C:/ai/toolbox/memory_topics.py --write`. It rebuilds Topics, checks IDs and tags, and prints the next free ID per prefix.
 
 ## Topics
 <!-- topics:start -->
 | Tag | Entries |
 | --- | --- |
-| #browser | I-017, L-003, L-004 |
-| #claude-code | D-001, D-002, E-003, E-004, I-001, I-008, I-009, I-018, I-022, L-001, L-002, L-005, PR-001, PR-002, S-005, S-006 |
-| #electron | S-001 |
-| #git | E-005 |
-| #gpu | E-001, I-011, I-013, S-003 |
-| #image-gen | E-001, P-001, S-003 |
-| #json | I-001, I-004, S-007 |
-| #llm | E-001, P-001, R-002, S-004 |
+| #audio | L-008 |
+| #browser | E-006, I-017, L-003, L-004, L-006, L-007, R-004, R-007, S-011 |
+| #claude-code | D-001, D-002, E-003, E-004, I-001, I-008, I-009, I-018, I-022, L-001, L-002, L-005, L-006, PR-001, PR-002, S-005, S-006 |
+| #electron | I-025, I-026, S-001, S-009 |
+| #git | E-005, I-024 |
+| #gpu | E-001, I-011, I-013, I-025, I-030, S-003 |
+| #image-gen | E-001, I-030, I-041, P-001, S-003 |
+| #json | I-001, I-004, I-032, R-005, R-006, S-007 |
+| #llm | E-001, I-031, I-036, I-037, P-001, R-002, R-007, S-004, S-010 |
 | #memory | D-001, D-002, D-003, L-001, P-002, P-003, PR-001, R-003 |
 | #packaging | I-014, I-015 |
-| #powershell | I-002, R-001 |
-| #python | E-001, I-003, I-010, I-011, I-012, I-013, I-014, I-015, I-023, S-002, S-003, S-008 |
-| #secrets | I-016 |
-| #shell | E-003, I-001, I-003, I-005, I-006, I-007, I-008, I-016, I-020, S-005 |
-| #stt | E-001, P-001, R-002, S-008 |
-| #testing | I-020, I-021, PR-002, S-001, S-006, S-007 |
-| #tts | E-001, E-002, I-013, P-001, R-002, S-002 |
-| #ui | I-019 |
-| #windows | E-002, E-003, E-005, I-001, I-002, I-003, I-005, I-006, I-012, I-022, I-023, R-001, S-001, S-008 |
+| #powershell | I-002, I-029, I-040, R-001 |
+| #python | E-001, I-003, I-010, I-011, I-012, I-013, I-014, I-015, I-023, I-027, I-028, I-030, I-031, I-033, I-035, I-038, R-007, S-002, S-003, S-008, S-009, S-010 |
+| #secrets | I-016, I-035 |
+| #shell | E-003, I-001, I-003, I-005, I-006, I-007, I-008, I-016, I-020, I-024, I-027, I-033, I-039, I-040, S-005 |
+| #stt | E-001, P-001, R-002, S-008, S-009 |
+| #testing | I-020, I-021, L-007, PR-002, S-001, S-006, S-007, S-011 |
+| #tts | E-001, E-002, I-013, P-001, R-002, S-002, S-009 |
+| #ui | I-019, I-025, I-032, I-034 |
+| #video | I-039 |
+| #windows | E-002, E-003, E-005, E-006, I-001, I-002, I-003, I-005, I-006, I-012, I-022, I-023, I-024, I-026, I-027, I-028, I-029, I-040, R-001, S-001, S-008 |
 
-Next free IDs: D-004, E-006, I-024, L-006, P-004, PR-003, R-004, S-009, T-008. Generated by `toolbox/memory_topics.py`; don't edit by hand.
+Next free IDs: D-004, E-007, I-042, L-009, P-004, PR-003, R-008, S-012, T-008. Generated by `toolbox/memory_topics.py`; don't edit by hand.
 <!-- topics:end -->

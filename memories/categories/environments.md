@@ -3,6 +3,8 @@
 Load when: running commands, installing things, or debugging "works elsewhere" problems.
 Format (see `index.md` → Entry format): `- **E-NNN** [YYYY-MM-DD] #tags — <fact, one line>` with details as sub-bullets. Update in place when a version changes. Newest first.
 
+- **E-006** [2026-11-25] #windows #browser — The main machine's network resolves some hosts to fake-IP range `198.18.x.x` (proxy/TUN DNS), e.g. `www.bleepingcomputer.com` → 198.18.8.39, so SSRF guards that require public addresses refuse them; don't loosen the guard, mark the source disabled.
+  - Same day from Python/httpx: CISA RSS feeds return HTTP 403 (KEV JSON at cisa.gov works), mitel/danfoss/n-able/wso2 home pages 403.
 - **E-001** [2026-11-24] #python #gpu #llm #tts #stt #image-gen — Main machine AI/audio stack: GTX 1070 (8 GB), 64 GB RAM, Python 3.12.6, torch 2.8.0+cu128, Ollama `gemma4:latest`.
   - Python at `C:\Python312`, packages in user site-packages (`%APPDATA%\Python\Python312`).
   - torch 2.8.0+cu128 and torchvision 0.23.0+cu128 (upgraded from a broken 0.20.1 on 2026-11-24; see I-013).

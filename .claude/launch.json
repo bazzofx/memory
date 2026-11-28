@@ -1,0 +1,35 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "traffic-lens",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8781",
+        "--directory",
+        "C:/_web_apps_2025/trend_webAppInspect"
+      ],
+      "port": 8781,
+      "autoPort": false
+    },
+    {
+      "name": "cve-intel",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-c",
+        "import sys,runpy;sys.path.insert(0,r'C:/_web_apps_2025/CVE_Intel');sys.argv=['backend','--no-scheduler','--port','8766'];runpy.run_module('backend',run_name='__main__')"
+      ],
+      "port": 8766,
+      "autoPort": false
+    },
+    {
+      "name": "mock-form",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["C:/_web_apps_2025/AutoJobSearch-Application/formtest/serve_mock_form.py"],
+      "port": 8765,
+      "autoPort": false
+    }
+  ]
+}
